@@ -135,3 +135,4 @@ LOGOUT_REDIRECT_URL = '/accounts/login'
 
 # Authentication User Model
 AUTH_USER_MODEL = 'accounts.User'
+SESSION_COOKIE_SECURE = True
