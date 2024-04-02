@@ -20,3 +20,8 @@ class Comment(models.Model):
 	post = models.ForeignKey(Post, related_name='comments', on_delete=models.CASCADE)
 	text = models.TextField(max_length=2048, blank=True)
 	comment_date = models.DateTimeField(auto_now_add=True)
+
+	def __str__(self):
+		model_name = self.__class__.__name__
+		fields_str = ", ".join((f"{field.name}={getattr(self, field.name)}" for field in self._meta.fields))
+		return f"{model_name}({fields_str})"
